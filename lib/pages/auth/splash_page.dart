@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:siakad_application/pages/auth/auth_page.dart';
 
+
 import '../../common/constants/images.dart';
 
 class SplashPage extends StatefulWidget {
@@ -15,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
   void initState() {
     super.initState();
     Future.delayed(
-      const Duration(seconds: 10),
+      const Duration(seconds: 3),
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(
