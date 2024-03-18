@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../common/components/menu_card.dart';
-import '../../common/components/search_input.dart';
+import '../../common/widgets/menu_card.dart';
+import '../../common/widgets/search_input.dart';
 import '../../common/constants/colors.dart';
 import '../../common/constants/images.dart';
 
