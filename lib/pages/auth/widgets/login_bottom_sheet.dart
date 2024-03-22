@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:siakad_application/pages/dosen/dosen_page.dart';
-import 'package:siakad_application/pages/mahasiswa/mahasiswa_page.dart';
 
 
 import '../../../bloc/login/login_bloc.dart';
 import '../../../common/constants/colors.dart';
 import '../../../common/widgets/buttons.dart';
 import '../../../common/widgets/custom_text_field.dart';
+import '../../../data/datasources/auth_local_datasource.dart';
 import '../../../data/models/request/auth_request_model.dart';
+import '../../dosen/dosen_page.dart';
+import '../../mahasiswa/mahasiswa_page.dart';
 
 class LoginBottomSheet extends StatefulWidget {
   const LoginBottomSheet({
@@ -97,7 +98,7 @@ class _LoginBottomSheetState extends State<LoginBottomSheet> {
                   state.maybeWhen(
                     orElse: () {},
                     loaded: (data) {
-                      
+                      AuthLocalDatasource().saveAuthData(data);
                       if (data.user.roles == 'mahasiswa') {
                         Navigator.pushReplacement(context,
                             MaterialPageRoute(builder: (context) {

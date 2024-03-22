@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:siakad_application/pages/mahasiswa/setting_page.dart';
 
 import '../../common/constants/colors.dart';
 import '../../common/constants/icons.dart';
+import '../profile/profile_page.dart';
 import 'dashboard_page.dart';
 
 class MahasiswaPage extends StatefulWidget {
@@ -15,25 +15,21 @@ class MahasiswaPage extends StatefulWidget {
 class _MahasiswaPageState extends State<MahasiswaPage> {
   int _selectedIndex = 0;
 
-  final List<Widget> _pages = [
-    const DashboardPage(),
-    // const SchedulesPage(),
-    // const ProfilePage(role: 'Mahasiswa')
-    // const Center(child: Text("Home"),  
-    // ),  
-    const Center(child: Text("Schedule"),  
-    ),  
-    const SettingPage(),  
-    
-
-    
-  ];
-
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
+
+  final List<Widget> _pages = [
+    const DashboardPage(),
+    const Center(
+      child: Text('Schedule'),
+    ),
+    const ProfilePage(
+      role: 'Mahasiswa',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {

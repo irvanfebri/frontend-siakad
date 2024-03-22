@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../bloc/login/login_bloc.dart';
-import '../../common/widgets/buttons.dart';
 import '../../common/constants/colors.dart';
 import '../../common/constants/images.dart';
+import '../../common/widgets/buttons.dart';
 import '../dosen/dosen_page.dart';
 import '../mahasiswa/mahasiswa_page.dart';
 import 'widgets/login_bottom_sheet.dart';
@@ -21,52 +21,36 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              Images.logo,
-              width: 115.0,
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Image.asset(
+            Images.logo,
+            width: 115.0,
+          ),
+          const SizedBox(height: 8.0),
+          const Text(
+            "SIAKAD CWB",
+            style: TextStyle(
+              fontSize: 34,
+              fontWeight: FontWeight.w800,
+              color: ColorName.primary,
             ),
-            const SizedBox(height: 8.0),
-            const Text(
-              "SIAKAD CWB",
-              style: TextStyle(
-                fontSize: 34,
-                fontWeight: FontWeight.w800,
-                color: ColorName.primary,
-              ),
+          ),
+          const SizedBox(height: 8.0),
+          const Text(
+            "Melayani Edukasi, Memudahkan Administrasi!",
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w600,
+              color: ColorName.grey,
             ),
-            const SizedBox(height: 8.0),
-            const Text(
-              "Melayani Edukasi, Memudahkan Administrasi!",
-              style: TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w600,
-                color: ColorName.grey,
-              ),
-            ),
-          ],
-        ),
+          ),
+        ]),
       ),
       bottomNavigationBar: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            Button.filled(
-              onPressed: () {
-                showModalBottomSheet(
-                  context: context,
-                  useSafeArea: true,
-                  isScrollControlled: true,
-                  builder: (BuildContext context) {
-                    return const LoginBottomSheet();
-                  },
-                );
-              },
-              label: 'CIVITAS AKADEMIK',
-            ),
             const SizedBox(height: 8.0),
             Button.outlined(
               onPressed: () {
@@ -82,7 +66,7 @@ class _AuthPageState extends State<AuthPage> {
                   },
                 );
               },
-              label: 'MAHASISWA',
+              label: 'LOGIN',
             ),
             const SizedBox(height: 32.0),
             const Text.rich(

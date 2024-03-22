@@ -42,6 +42,7 @@ dependencies:
   freezed: ^2.4.7
   freezed_annotation: ^2.4.1
   build_runner: ^2.4.8
+  flutter_dash: ^1.0.0
 
 dev_dependencies:
   flutter_test:
