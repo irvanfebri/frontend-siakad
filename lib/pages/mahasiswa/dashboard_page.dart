@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:siakad_application/pages/mahasiswa/absensi_page.dart';
+import 'package:siakad_application/pages/mahasiswa/jadwal_matkul_page.dart';
+import 'package:siakad_application/pages/mahasiswa/models/sample_map_page.dart';
+import 'package:siakad_application/pages/mahasiswa/nilai_mk_page.dart';
 
+import '../../bloc/khs/khs_bloc.dart';
 import '../../common/constants/colors.dart';
 import '../../common/constants/images.dart';
 import '../../common/widgets/menu_card.dart';
 import '../../common/widgets/search_input.dart';
 import 'khs_page.dart';
-import 'nilai_mk_page.dart';
-import 'schedules_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -39,10 +42,22 @@ class _DashboardPageState extends State<DashboardPage> {
               children: [
                 IconButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) {
-                      return const AbsensiPage();
-                    }));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SampleMapPage()));
+                  },
+                  icon: const Icon(
+                    Icons.map,
+                    color: ColorName.green,
+                  ),
+                ),
+                IconButton(
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AbsensiPage()));
                   },
                   icon: const Icon(
                     Icons.qr_code_scanner,
@@ -69,9 +84,8 @@ class _DashboardPageState extends State<DashboardPage> {
           label: 'Kartu Hasil\nStudi',
           backgroundColor: const Color(0xff686BFF),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const KhsPage();
-            }));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const KhsPage()));
           },
           imagePath: Images.khs,
         ),
@@ -80,9 +94,8 @@ class _DashboardPageState extends State<DashboardPage> {
           label: 'Nilai\nMata Kuliah',
           backgroundColor: const Color(0xffFFB023),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const NilaiMkPage();
-            }));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const NilaiMkPage()));
           },
           imagePath: Images.nMatkul,
         ),
@@ -91,9 +104,10 @@ class _DashboardPageState extends State<DashboardPage> {
           label: 'Jadwal\nMata Kuliah',
           backgroundColor: const Color(0xffFF68F0),
           onPressed: () {
-            Navigator.push(context, MaterialPageRoute(builder: (context) {
-              return const SchedulesPage();
-            }));
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const JadwalMatkulPage()));
           },
           imagePath: Images.jadwal,
         ),

@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:siakad_application/data/models/response/schedule_response_model.dart';
 
 import '../../common/constants/variables.dart';
-import '../models/response/schedule_response_model.dart';
 import 'auth_local_datasource.dart';
 
 class ScheduleRemoteDatasource {
